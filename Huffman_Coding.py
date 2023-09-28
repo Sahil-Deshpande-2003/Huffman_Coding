@@ -5,10 +5,10 @@ import os
 
 class HuffmanCoding:
     def __init__(self, path):
-        self.path = path
-        self.heap = []
-        self.codes = {}
-        self.reverse_mapping = {}
+        self.path = path # path of the file to be compressed
+        self.heap = [] # Min heap using an array
+        self.codes = {} # maps the characters to codes
+        self.reverse_mapping = {} # maps the codes to characters
 
     class HeapNode:
         def __init__(self, char, freq):
@@ -20,16 +20,24 @@ class HuffmanCoding:
         # defining comparators less_than and equals
 
         # defining function to compare binary tree nodes
+        # if 1 node is smaller than the other it means that the frequency of the 1st one is less than other one
+        
         def __lt__(self, other):
             return self.freq < other.freq
-        
-        # telling them ki ek node dusre se chota hai iska matlab ek ki frequency dusre se choti hai
+
+
+        '''The isinstance function in Python is used to check if an object
+belongs to a particular class or a tuple of classes.
+In my code, it is used to determine
+if the other object is an instance of the HeapNode class.'''
+
 
         def __eq__(self, other):
             if(other == None):
                 return False
             if(not isinstance(other, HeapNode)):
                 return False
+            
             return self.freq == other.freq
         
         # so now interpreter knows that minimum Node is the node with Min frequency and it should know the basis on which we are
