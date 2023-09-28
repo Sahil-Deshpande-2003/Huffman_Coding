@@ -1,5 +1,6 @@
+
 import heapq
-import os
+import os 
 
 
 class HuffmanCoding:
@@ -160,10 +161,12 @@ class HuffmanCoding:
 
     def remove_padding(self, padded_encoded_text):
         padded_info = padded_encoded_text[:8]
-        extra_padding = int(padded_info, 2)
+        extra_padding = int(padded_info, 2) # convert into decimal
 
         padded_encoded_text = padded_encoded_text[8:] 
         encoded_text = padded_encoded_text[:-1*extra_padding]
+
+        # padded info is stored in 1st 8 bits and the padding is done at the end so you need to remove both
 
         return encoded_text
 
@@ -188,6 +191,8 @@ class HuffmanCoding:
         '''
         filename, file_extension = os.path.splitext(self.path)
         output_path = filename + "_decompressed" + ".txt"
+        # sample.bin file split on the basis of '.', so filename is sample and extension is .bin
+        # and output path will be sample_decompressed.txt
 
         # since we are reading content from bin file (sample.bin) so we need to use
         # 'rb' mode
@@ -199,12 +204,13 @@ class HuffmanCoding:
         with open(input_path, 'rb') as file, open(output_path, 'w') as output:
             bit_string = ""
 
-            byte = file.read(1)
+            byte = file.read(1) # here I have read 1st byte
             while(len(byte) > 0):
-                byte = ord(byte)
-                bits = bin(byte)[2:].rjust(8, '0')
+                byte = ord(byte) # using ord you can find the integer corresponding to that value
+                bits = bin(byte)[2:].rjust(8, '0') # for bin(5) you'll get bin as b'101 hence start from the 2nd index
+                # and rjust so that you get a 8 bit number hence 00000101
                 bit_string += bits
-                byte = file.read(1)
+                byte = file.read(1) # here again you are reading byte
 
             encoded_text = self.remove_padding(bit_string)
 
