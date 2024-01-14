@@ -123,6 +123,7 @@ if the other object is an instance of the HeapNode class.'''
             encoded_text += "0" # Padding done at the end
 
         padded_info = "{0:08b}".format(extra_padding) # means extra padding = 0 and ":08" specifies that the field should be 8 characters wide, and "b" indicates that the value should be formatted as a binary number.
+         # The 0 is a positional argument specifier, meaning it refers to the first (and in this case, the only) argument passed to the format method.It tells the format method to take the value from the argument at position 0.
 
         encoded_text = padded_info + encoded_text # padded information is stored in the 1st 8 bits  
         return encoded_text
