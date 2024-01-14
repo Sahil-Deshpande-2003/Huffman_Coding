@@ -100,9 +100,9 @@ if the other object is an instance of the HeapNode class.'''
 
         # now to access the root, here, each time we are picking up 2 nodes, adding their frequencies and creating a node with key = None
         #  and frequency = f1 + f2, hence as we keep going upwards in the tree, the frequency keeps on increasing 
-        # hence the lower nodes i.e. the nodes with lesser freq are towards the front of the heap and root i.e. node with highest
-        # freq is at the end of min heap and hence, to access it, use heappop
+        # hence the lower nodes i.e. the nodes with lesser freq are towards the front of the heap 
 
+        # here root is the node with min freq
         root = heapq.heappop(self.heap)
         current_code = ""
         self.make_codes_helper(root, current_code)
