@@ -65,6 +65,9 @@ if the other object is an instance of the HeapNode class.'''
 
     def merge_nodes(self):
         while(len(self.heap)>1):
+
+            # POP the 2 nodes with min freq
+
             node1 = heapq.heappop(self.heap)
             node2 = heapq.heappop(self.heap)
 
@@ -124,6 +127,7 @@ if the other object is an instance of the HeapNode class.'''
         encoded_text = padded_info + encoded_text # padded information is stored in the 1st 8 bits  
         return encoded_text
 
+    # read acche se!!!!
 
     def get_byte_array(self, padded_encoded_text):
 
@@ -167,7 +171,7 @@ if the other object is an instance of the HeapNode class.'''
 
             # Text is accessed using the path provided by the user
 
-            text = file.read()
+            text = file.read() # access the file using the path 
             text = text.rstrip()
             '''
             In Python, trailing characters refer to characters that appear at the end of a string, list, or any sequence data structure. These characters come after the main content of the sequence and are often used to represent additional or optional information.
@@ -203,7 +207,7 @@ if the other object is an instance of the HeapNode class.'''
     
     
     '''
-
+    # start YAHA SE
 
     def remove_padding(self, padded_encoded_text):
         padded_info = padded_encoded_text[:8] # padded_info is stored in the 1st 8 bits
@@ -274,6 +278,7 @@ if the other object is an instance of the HeapNode class.'''
     
     
 path = "D:/Huffman_Coding_Text_File.txt"
+
 
 h = HuffmanCoding(path)
 
