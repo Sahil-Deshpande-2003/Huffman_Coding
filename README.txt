@@ -11,4 +11,5 @@ To run the project:
 
 Run Huffman_Coding.py file
 
-![Huff_final-ezgif com-video-to-gif-converter](https://github.com/Sahil-Deshpande-2003/Huffman_Coding/assets/123302700/b0b88121-63f2-4031-bef0-8fc41d5b2fc0)
+![Huff_final-ezgif com-video-to-gif-converter](https://github.com/Sahil-Deshpande-2003/Huffman_Coding/assets/123302700/193e8979-4af7-427d-ae2c-b5b1d506aa95)
+
